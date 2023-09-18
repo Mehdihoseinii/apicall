@@ -116,26 +116,27 @@ func deleteFromCSV(ID uint) {
 	}
 	csvWriter.Flush()
 }
-func updateFromCSV(ID uint) {
-	articles, err := GetAllFromCSV()
-	if err != nil {
-		fmt.Println(err)
-	}
 
-	articles = updateSpificArticle(ID, articles)
-	file, err := os.OpenFile("data.csv", os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0755)
-	if err != nil {
-		fmt.Println(err)
-	}
-	defer file.Close()
+// func updateFromCSV(ID uint) {
+// 	articles, err := GetAllFromCSV()
+// 	if err != nil {
+// 		fmt.Println(err)
+// 	}
 
-	csvWriter := csv.NewWriter(file)
-	// if err := csvWriter.Write(ArticlesToRecords(articles));err != nil{
-	// 	fmt.Println(err)
-	// }
-	// csvWriter.Flush()
+// 	articles = updateSpificArticle(ID, articles)
+// 	file, err := os.OpenFile("data.csv", os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0755)
+// 	if err != nil {
+// 		fmt.Println(err)
+// 	}
+// 	defer file.Close()
 
-}
+// 	csvWriter := csv.NewWriter(file)
+// 	// if err := csvWriter.Write(ArticlesToRecords(articles));err != nil{
+// 	// 	fmt.Println(err)
+// 	// }
+// 	// csvWriter.Flush()
+
+// }
 
 func GetAllFromCSV() ([]Article, error) {
 	// os.O_APPEND|os.O_CREATE|os.O_WRONLY,
