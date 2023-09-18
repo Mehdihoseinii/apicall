@@ -129,11 +129,11 @@ func updateFromCSV(ID uint) {
 	}
 	defer file.Close()
 
-	// csvWriter := csv.NewWriter(file)
-	// if err := csvWriter.Write(ArticlesToRecords(articles)); err != nil {
-	// 	fmt.Println(err)
-	// }
-	// csvWriter.Flush()
+	csvWriter := csv.NewWriter(file)
+	if err := csvWriter.Write(ArticlesToRecords(articles)); err != nil {
+		fmt.Println(err)
+	}
+	csvWriter.Flush()
 
 }
 
