@@ -197,3 +197,5 @@ func updateSpificArticle(ID uint, articles []Article) []Article {
 	}
 	return newArticles
 }
+
+var test string
