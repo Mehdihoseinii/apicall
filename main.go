@@ -197,7 +197,3 @@ func updateSpificArticle(ID uint, articles []Article) []Article {
 	}
 	return newArticles
 }
-
-// for example
-//این متن فقط برای تست پوش هست
-//و این
